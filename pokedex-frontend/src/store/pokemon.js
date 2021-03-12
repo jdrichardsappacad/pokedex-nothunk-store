@@ -152,7 +152,6 @@ const pokemonReducer = (state = initialState, action) => {
       };
     }
     case ADD_ITEM: {
-      console.log(action.item);
       return {
         ...state,
         [action.item.pokemonId]: {
