@@ -20,7 +20,7 @@ const addOnePokemon = (pokemon) => ({
   pokemon
 });
 
-export const createPokemon = async (data, dispatch) => {
+export const createPokemon = async (dispatch, data) => {
   const response = await fetch(`/api/pokemon`, {
     method: 'post',
     headers: {
@@ -37,7 +37,7 @@ export const createPokemon = async (data, dispatch) => {
 };
 
 // functions
-export const updatePokemon = async (data, dispatch) => {
+export const updatePokemon = async (dispatch, data) => {
   const response = await fetch(`/api/pokemon/${data.id}`, {
     method: 'put',
     headers: {
@@ -53,7 +53,7 @@ export const updatePokemon = async (data, dispatch) => {
   }
 };
 
-export const getOnePokemon = async (id, dispatch) => {
+export const getOnePokemon = async (dispatch, id) => {
   const response = await fetch(`/api/pokemon/${id}`);
 
   if (response.ok) {

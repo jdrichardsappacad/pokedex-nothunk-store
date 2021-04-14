@@ -10,7 +10,7 @@ const PokemonItems = ({ pokemon, setEditItemId }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getItems(pokemon.id, dispatch);
+    getItems(dispatch, pokemon.id);
   }, [dispatch, pokemon.id]);
 
   if (!items) {

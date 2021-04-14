@@ -28,7 +28,7 @@ const remove = (itemId, pokemonId) => ({
 
 // functions
 
-export const getItems = async (id, dispatch) => {
+export const getItems = async (dispatch, id) => {
   const response = await fetch(`/api/pokemon/${id}/items`);
 
   if (response.ok) {
@@ -37,7 +37,7 @@ export const getItems = async (id, dispatch) => {
   }
 };
 
-export const createItem = async (data, pokemonId, dispatch) => {
+export const createItem = async (dispatch, data, pokemonId) => {
   const response = await fetch(`/api/pokemon/${pokemonId}/items`, {
     method: 'post',
     headers: {
@@ -53,7 +53,7 @@ export const createItem = async (data, pokemonId, dispatch) => {
   }
 };
 
-export const updateItem = async (data, dispatch) => {
+export const updateItem = async (dispatch, data) => {
   const response = await fetch(`/api/items/${data.id}`, {
     method: 'put',
     headers: {
@@ -69,7 +69,7 @@ export const updateItem = async (data, dispatch) => {
   }
 };
 
-export const deleteItem = async (itemId, dispatch) => {
+export const deleteItem = async (dispatch, itemId) => {
   const response = await fetch(`/api/items/${itemId}`, {
     method: 'delete'
   });
