@@ -44,7 +44,7 @@ const EditPokemonForm = ({ pokemon, hideForm }) => {
       moves: [move1, move2]
     };
 
-    const updatedPokemon = await updatePokemon(payload, dispatch);
+    const updatedPokemon = await updatePokemon(dispatch, payload);
     if (updatedPokemon) {
       hideForm();
     }

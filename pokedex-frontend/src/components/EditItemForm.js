@@ -24,7 +24,7 @@ const EditPokemonForm = ({ itemId, hideForm }) => {
       price
     };
 
-    const updatedItem = await updateItem(payload, dispatch);
+    const updatedItem = await updateItem(dispatch, payload);
     if (updatedItem) {
       hideForm();
     }
